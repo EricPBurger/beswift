@@ -10,15 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_01_145100) do
+
+ActiveRecord::Schema.define(version: 2020_02_01_161146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "costume_id"
+    t.bigint "user_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["costume_id"], name: "index_bookings_on_costume_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "costumes", force: :cascade do |t|
     t.string "costume_name"
     t.string "origin"
-    t.integer "price"
+    t.decimal "price", precision: 8, scale: 2
     t.string "desc_short"
     t.text "desc_long"
     t.bigint "user_id"
@@ -34,6 +46,24 @@ ActiveRecord::Schema.define(version: 2020_02_01_145100) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "receipts", force: :cascade do |t|
+    t.date "payment_date"
+    t.decimal "amount"
+    t.integer "days_booked"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_receipts_on_booking_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -42,9 +72,18 @@ ActiveRecord::Schema.define(version: 2020_02_01_145100) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "city"
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+
+  add_foreign_key "bookings", "costumes"
+  add_foreign_key "bookings", "users"
   add_foreign_key "costumes", "users"
+  add_foreign_key "receipts", "bookings"
+  add_foreign_key "reviews", "bookings"
 end
