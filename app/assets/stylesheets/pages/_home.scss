@@ -1,12 +1,20 @@
 // Specific CSS for your home-page
 
+body {
+  padding: 0;
+  margin: 0;
+  // background-color: var(--light-text-color);
+  overflow-x: hidden;
+
+}
+
 
 .bg {
   height: 100vh;
 }
 
 .jumbotron {
-  padding-top: 146px;
+  // padding-top: 146px;
   min-height: 100%;
   position: relative;
   overflow: hidden;
