@@ -4,7 +4,9 @@
           <source src="/assets/images/beswift_hero_image.mp4" type="video/mp4">
        </video> -->
 
-       <%= video_tag "beswift_hero_image.mp4", autoplay: true, :controls => false %>
+       <!-- the video below doesnt have sound but 'muted' is necessary due to chrome autoplay rules -->
+
+       <%= video_tag "beswift_hero_image.mp4",autoplay: true, loop: true, muted: 'muted', :controls => false %>
 
         <div id="jumboContainer" class="container">
           <h1 class="display-3">Welcome to BeSwift</h1>
