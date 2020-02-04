@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   resources :costumes, except: :destroy
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :bookings, except: :destroy
 end
