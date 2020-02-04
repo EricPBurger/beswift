@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_02_01_161146) do
+ActiveRecord::Schema.define(version: 2020_02_04_192549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,9 +33,10 @@ ActiveRecord::Schema.define(version: 2020_02_01_161146) do
     t.string "desc_short"
     t.text "desc_long"
     t.bigint "user_id"
-    t.string "availability"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "size"
+    t.boolean "availability", default: true
     t.index ["user_id"], name: "index_costumes_on_user_id"
   end
 
@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 2020_02_01_161146) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
 
   add_foreign_key "bookings", "costumes"
   add_foreign_key "bookings", "users"
