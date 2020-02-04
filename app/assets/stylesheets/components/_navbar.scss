@@ -2,7 +2,32 @@
   justify-content: space-between;
   background: transparent;
   position: fixed;
+  width: 100vw;
+  z-index: 2;
 }
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  opacity: .75;
+  margin: 0px 8px 0px 8px;
+
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: white;
+  border-bottom: 1px solid white;
+    opacity: 1;
+
+
+
+}
+
+
+.navbar-light .navbar-nav .active > .nav-link {
+border-bottom: 1px solid white;
+  color: white;
+  opacity: 1;
+ }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
