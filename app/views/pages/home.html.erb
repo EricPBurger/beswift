@@ -1,15 +1,24 @@
     <div class="bg">
       <div class="jumbotron jumbotron-fluid">
-        <video autoplay muted loop  poster="">
-          <source src="Media\eggsheader.mp4" type="video/mp4">
-          <!-- <source src="Media\poached.webm" type="video/webm"> -->
-       </video>
+<!--         <video autoplay muted loop  poster="">
+          <source src="/assets/images/beswift_hero_image.mp4" type="video/mp4">
+       </video> -->
+
+       <!-- the video below doesnt have sound but 'muted' is necessary due to chrome autoplay rules -->
+
+       <%= video_tag "beswift_hero_image.mp4",autoplay: true, loop: true, muted: 'muted', :controls => false %>
+
         <div id="jumboContainer" class="container">
-          <h1 class="display-3">Welcome to BeSwift</h1>
-          <p class="lead">The ultimate eggsperience</p>
+<!--           <h1 class="display-3">Welcome to BeSwift</h1>-->
+
+            <h1 class="display-3">Be<span class="txt-rotate" data-period="2000" data-rotate='[ "Savage", "Spectacular", "Splending", "Swift" ]'></span></h1>
+          <br>
+          <br>
+          <br>
+
           <p class="lead">
-            <a class="btn btn-outline-light btn-lg" href="#" role="button">view our menu</a>
-            <a class="btn btn-outline-light btn-lg" href="#" role="button">Book a table</a>
+            <a class="btn btn-outline-light btn-lg" href="#" role="button">Sign Up</a>
+            <a class="btn btn-outline-light btn-lg" href="#" role="button">Browse Costumes</a>
           </p>
         </div>
       </div>
