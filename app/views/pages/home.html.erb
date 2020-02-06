@@ -1,22 +1,25 @@
 <div class="bg">
-  <div class="jumbotron jumbotron-fluid">
-    <!-- <video autoplay muted loop  poster=""> -->
-      <!-- <source src="/assets/images/beswift_hero_image.mp4" type="video/mp4"> -->
-    <!-- </video> -->
-    <!-- the video below doesnt have sound but 'muted' is necessary due to chrome autoplay rules -->
-    <%= video_tag "beswift_hero_image.mp4",autoplay: true, loop: true, muted: 'muted', :controls => false %>
-    <div id="jumboContainer" class="container">
-    <!-- <h1 class="display-3">Welcome to BeSwift</h1>-->
-      <h1 class="display-3">Be<span class="txt-rotate" data-period="2000" data-rotate='[ "Savage", "Spectacular", "Splending", "Swift" ]'></span></h1>
-      <div class="lead-div mt-5 mb-5 d-flex justify-content-center">
-        <p class="lead">
-          <%= link_to 'Sign Up', new_user_registration_path, class:"btn btn-outline-light btn-lg" %>
-          <%= link_to 'Browse Costumes', costumes_path, class:"btn btn-outline-light btn-lg" %>
-        </p>
-      </div>
-      <%= render "shared/search-form" %>
+    <div class="jumbotron jumbotron-fluid">
+        <!-- the video below doesnt have sound but 'muted' is necessary due to chrome autoplay rules -->
+        <%= video_tag "beswift_hero_image.mp4",autoplay: true, loop: true, muted: 'muted', :controls => false %>
+        <div id="jumboContainer" class="container">
+            <!--           <h1 class="display-3">Welcome to BeSwift</h1>-->
+            <h1 class="display-3">Be<span class="txt-rotate" data-period="2000" data-rotate='[ "Savage", "Spectacular", "Splending", "Swift" ]'></span></h1>
+            <br>
+            <br>
+            <br>
+            <div class="lead-div">
+                <%= render "shared/search-form" %>
+                <p class="lead">
+                    <%= link_to 'Sign Up', new_user_registration_path, class:"btn btn-outline-light btn-lg" %>
+                    <%= link_to 'Browse Costumes', costumes_path, class:"btn btn-outline-light btn-lg" %>
+                </p>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <div class="container-fluid main-body-home">
 </div>
+<div class="parallax"></div>
+
+
