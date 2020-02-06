@@ -1,31 +1,39 @@
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
-  </div>
 <h2>Costumes</h2>
-
-<div class="row">
-  <% @costumes.each do |costume| %>
-    <%= link_to costume_path(costume) do %>
-      <div class="card-costume col-4">
-        <%= image_tag "default_costume.jpeg", alt: "Default Costume Image"%>
-        <div class="card-costume-infos">
-          <div>
-            <h2><%= costume.costume_name %></h2>
-            <p><%= costume.desc_short %></p>
-          </div>
-          <h2 class="card-costume-pricing"><%= costume.price %></h2>
-          <img src="" class="card-costume-user avatar-bordered" />
+<% @costumes.each do |costume| %>
+<p>
+    <%= costume.costume_name %>
+</p>
+<% end %>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="card card-costume">
+                <img class="card-img-top" src="https://images.unsplash.com/photo-1572804013427-4d7ca7268217?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80" alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-text">
+                        Tassels
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    <% end %>
-  <% end %>
+        <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="https://images.unsplash.com/photo-1515963450108-4b7a9b01b666?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-text">
+                        Sequins
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://images.unsplash.com/photo-1569872770750-ae7f961b798b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="card-text">
+                            Iconic
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
