@@ -1,0 +1,19 @@
+<h2>Costumes</h2>
+
+<div class="row">
+  <% @costumes.each do |costume| %>
+    <%= link_to costume_path(costume) do %>
+      <div class="card-costume col-4">
+        <%= image_tag "default_costume.jpeg", alt: "Default Costume Image"%>
+        <div class="card-costume-infos">
+          <div>
+            <h2><%= costume.costume_name %></h2>
+            <p><%= costume.desc_short %></p>
+          </div>
+          <h2 class="card-costume-pricing"><%= costume.price %></h2>
+          <img src="" class="card-costume-user avatar-bordered" />
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2020_02_04_192549) do
+=======
 ActiveRecord::Schema.define(version: 2020_02_01_161146) do
+>>>>>>> 0aab9e48fb22aa9b70272b4c62fe63df7cc329b6
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,9 +37,10 @@ ActiveRecord::Schema.define(version: 2020_02_01_161146) do
     t.string "desc_short"
     t.text "desc_long"
     t.bigint "user_id"
-    t.string "availability"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "size"
+    t.boolean "availability", default: true
     t.index ["user_id"], name: "index_costumes_on_user_id"
   end
 
