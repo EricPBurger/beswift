@@ -9,8 +9,8 @@
 require 'faker'
 
 puts "Clearing database..."
-User.destroy_all
 Costume.destroy_all
+User.destroy_all
 puts "Creating users..."
 10.times do
 	user = User.new(
@@ -31,7 +31,7 @@ puts "Creating costumes..."
 		price: Faker::Number.number(digits: 2),
 		desc_short: Faker::GreekPhilosophers.quote,
 		desc_long: Faker::Lorem.paragraph(sentence_count: 2),
-		size: Faker::Number.number(digits: 2),
+		size: [6,8,10,12,14,16,18,20,22,24,28].sample,
 		availability: true,
 		user_id: User.all.sample.id
 		)
