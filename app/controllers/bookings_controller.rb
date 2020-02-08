@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   def show
@@ -13,10 +13,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking.new(booking_params)
+    @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
+    @booking.costume_id = Costume.find(params[:costume_id]).id
     if @booking.save
-      redirect to booking_path(@booking)
+      redirect_to user_bookings_path(current_user.id)
     else
       render :new
     end
