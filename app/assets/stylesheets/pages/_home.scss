@@ -5,6 +5,7 @@ body {
   margin: 0;
   // background-color: var(--light-text-color);
   overflow-x: hidden;
+  background-color: black;
 
 }
 
@@ -69,6 +70,90 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: .5;
+}
 
 
+
+
+
+// home page reviews
+
+
+.reviews-tabs-container {
+  padding: 100px 50px 100px 50px;
+  background-color: white;
+}
+
+.review-pills {
+  flex-wrap: nowrap;
+}
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: black!important;
+    background-color: transparent!important;
+}
+
+
+.nav-pills .nav-link, .nav-pills .show > .nav-link {
+    color: black!important;
+    background-color: transparent!important;
+}
+
+
+.review-pills > div {
+  width: 25%;
+  margin: 10px;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+
+}
+
+.review-pills > div:hover {
+  width: 25%;
+  margin: 10px;
+  height: 350px;
+
+  transition-duration: 1000ms;
+
+
+}
+
+
+
+.review-pills > div > a {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+p.name {
+  font-weight: bold;
+}
+
+p.booking_date {
+  color: grey;
+}
+
+
+#image-1 {
+  background-image: url(long-sequins.png);
+  // width: 100px;
+}
+
+#image-2 {
+  background-image: url(pink_dress.png);
+  // width: 100px;
+}
+#image-3 {
+  background-image: url(short_sequins.png);
+  // width: 100px;
+}
+#image-4 {
+  background-image: url(white_dress.png);
+  // width: 100px;
 }
