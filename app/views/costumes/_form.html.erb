@@ -1,10 +1,10 @@
 <%= simple_form_for @costume do |f| %>
-  <%= f.input :costume_name %>
-  <%= f.input :origin %>
-  <%= f.input :size %>
-  <%= f.input :price %>
-  <%= f.input :desc_short %>
-  <%= f.input :desc_long %>
+  <%= f.input :costume_name, label:"Name of outfit" %>
+  <%= f.input :origin, label:"Where was this outfit originally worn?" %>
+  <%= f.input :size, label:"Outfit size" %>
+  <%= f.input :price, label:"Price to rent per day" %>
+  <%= f.input :desc_short, label:"A short description of the outfit" %>
+  <%= f.input :desc_long, label:"A longer description of the outfit"  %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit %>
+  <%= f.submit class:"btn btn-primary", style:"color: white;" %>
 <% end %>
