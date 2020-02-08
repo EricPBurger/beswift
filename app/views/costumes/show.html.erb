@@ -2,15 +2,29 @@
   <div class="row">
     <div class="d-flex justify-content-between">
       <div class="col-sm">
-        <%= cl_image_tag @costume.photo.key, height: 300, width: 500, crop: :fill %>
+        <% if @costume.photo.attached? %>
+          <%= cl_image_tag @costume.photo.key, height: 300, width: 500, crop: :fill %>
+        <% else %>
+          <%= image_tag "glittery.jpg", height: 300, width: 500 %>
+        <% end %>
       </div>
       <div class="col-sm">
-        <%= cl_image_tag @costume.photo.key, height: 150, width: 275, crop: :fill %>
-        <%= cl_image_tag @costume.photo.key, height: 150, width: 275, crop: :fill %>
+        <% if @costume.photo.attached? %>
+          <%= cl_image_tag @costume.photo.key, height: 150, width: 275, crop: :fill %>
+          <%= cl_image_tag @costume.photo.key, height: 150, width: 275, crop: :fill %>
+        <% else %>
+          <%= image_tag "glittery.jpg", height: 150, width: 275 %>
+          <%= image_tag "glittery.jpg", height: 150, width: 275 %>
+        <% end %>
       </div>
       <div class="col-sm">
-        <%= cl_image_tag @costume.photo.key, height: 150, width: 275, crop: :fill %>
-        <%= cl_image_tag @costume.photo.key, height: 150, width: 275, crop: :fill %>
+        <% if @costume.photo.attached? %>
+          <%= cl_image_tag @costume.photo.key, height: 150, width: 275, crop: :fill %>
+          <%= cl_image_tag @costume.photo.key, height: 150, width: 275, crop: :fill %>
+        <% else %>
+          <%= image_tag "glittery.jpg", height: 150, width: 275 %>
+          <%= image_tag "glittery.jpg", height: 150, width: 275 %>
+        <% end %>
       </div>
     </div>
   </div>
