@@ -1,24 +1,56 @@
-.card-costume {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  img {
-    height: 200px;
+.container {
     width: 100%;
-    object-fit: cover;
-  }
-  h2 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
-  p {
-    font-size: 12px;
-    opacity: .7;
-    margin: 0;
-  }
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.card-costume {
+position: relative;
+display: -ms-flexbox;
+display: flex;
+-ms-flex-direction: column;
+flex-direction: column;
+min-width: 0;
+word-wrap: break-word;
+background-color:
+#fff;
+background-clip: border-box;
+border: 1px solid
+rgba(0,0,0,.125);
+border-radius: .25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.shadow-sm {
+box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+}
+
+.card-body {
+flex: 1 1 auto;
+min-height: 1px;
+padding: 1.25rem;
+}
 .card-costume .card-costume-infos {
   padding: 16px;
   display: flex;
@@ -32,4 +64,9 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+
+.ul li{
+  display: inline;
 }

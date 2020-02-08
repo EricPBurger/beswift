@@ -1,39 +1,10 @@
-<h2>Costumes</h2>
-<% @costumes.each do |costume| %>
-<p>
-    <%= costume.costume_name %>
-</p>
-<% end %>
 <div class="container">
-    <div class="row">
-        <div class="col-4">
-            <div class="card card-costume">
-                <img class="card-img-top" src="https://images.unsplash.com/photo-1572804013427-4d7ca7268217?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80" alt="Card image cap">
-                <div class="card-body">
-                    <div class="card-text">
-                        Tassels
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card">
-                <img class="card-img-top" src="https://images.unsplash.com/photo-1515963450108-4b7a9b01b666?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt="Card image cap">
-                <div class="card-body">
-                    <div class="card-text">
-                        Sequins
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1569872770750-ae7f961b798b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Card image cap">
-                    <div class="card-body">
-                        <div class="card-text">
-                            Iconic
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <h2>Costumes</h2>
+  <div class="row">
+    <% @costumes.each do |costume| %>
+      <div class="col-md-4">
+        <%= render "costume-card", costume: costume %>
+      </div>
+    <% end %>
+  </div>
 </div>
