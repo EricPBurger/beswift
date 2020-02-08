@@ -1,28 +1,29 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: transparent;
-  position: fixed;
+  background: black;
+  position: relative;
   width: 100vw;
-  z-index: 2;
+  // z-index: 2;
   height: 20px;
+  margin-top: 10px;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: white;
+  color: black;
   opacity: .75;
   margin: 0px 8px 0px 8px;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: white;
-  border-bottom: 1px solid white;
+  color: black;
+  // border-bottom: 1px solid black;
   opacity: 1;
 }
 
 
 .navbar-light .navbar-nav .active > .nav-link {
-  border-bottom: 1px solid white;
-  color: white;
+  // border-bottom: 1px solid black;
+  color: black;
   opacity: 1;
  }
 
@@ -31,5 +32,5 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 60px;
+  width: 150px;
 }
