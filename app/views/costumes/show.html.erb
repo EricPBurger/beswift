@@ -1,1 +1,33 @@
-<h2><%= @costume.costume_name %></h2>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <%= image_tag "glittery.jpg", alt: "Glittery in elevator", width: 500 %>
+    </div>
+    <div class="col-sm">
+        <%= image_tag "glittery.jpg", alt: "Glittery in elevator", width: 250 %>
+        <%= image_tag "glittery.jpg", alt: "Glittery in elevator", width: 250 %>
+    </div>
+    <div class="col-sm">
+        <%= image_tag "glittery.jpg", alt: "Glittery in elevator", width: 250 %>
+        <%= image_tag "glittery.jpg", alt: "Glittery in elevator", width: 250 %>
+    </div>
+  </div>
+</div>
+
+
+<p>
+  <h2><%= @costume.costume_name %></h2>
+</p>
+<p>
+  <h3><%= @costume.desc_short %></h3>
+</p>
+
+<p>
+  <strong>Origin:</strong><%= @costume.origin %>
+</p>
+
+<p>
+  <%= @costume.desc_long %>
+</p>
