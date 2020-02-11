@@ -19,7 +19,7 @@ puts "Creating users..."
 		first_name: Faker::Name.first_name,
 		last_name: Faker::Name.last_name,
 		city: Faker::Address.city,
-		address: Faker::Address.full_address
+		address: "46 Barnsbury Road, London N1 0HD"
 	)
 	user.save!
 end
