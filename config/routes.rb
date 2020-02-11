@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     resources :bookings, only: [ :new, :create ]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :bookings, except: [ :destroy, :new, :create ]
+  resources :bookings, except: [ :show, :destroy, :new, :create ]
 
   resources :users do
-    resources :bookings, only: :index
+    resources :bookings, only: [ :index, :show ]
   end
 end

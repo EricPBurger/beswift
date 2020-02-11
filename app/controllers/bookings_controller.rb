@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = current_user.bookings.find(params[:id])
+    @booking = Booking.find_by(user_id: current_user.id, id: params[:id])
   end
 
   def new
