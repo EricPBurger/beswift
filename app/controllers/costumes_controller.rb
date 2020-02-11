@@ -1,4 +1,4 @@
-class CostumesController < ApplicationController
+  class CostumesController < ApplicationController
   def index
     @costumes = Costume.all
   end

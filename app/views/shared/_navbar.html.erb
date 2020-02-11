@@ -25,7 +25,13 @@
       <ul class="navbar-nav mr-auto list-inline">
 
         <% if user_signed_in? %>
-        <% else  %>
+        <% else %>
+
+          <li>
+
+            <a class="nav-link list-inline-item" href="#"></a>
+            <%= link_to "Add Costume", new_costume_path %>
+          </li>
 
           <li class="nav-item active">
 
