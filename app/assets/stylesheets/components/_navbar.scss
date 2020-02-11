@@ -1,21 +1,22 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: black;
+  background: transparent;
   position: relative;
   width: 100vw;
   // z-index: 2;
-  height: 20px;
+  height: 50px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: black;
+  color: $pink;
   opacity: .75;
   margin: 0px 8px 0px 8px;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: black;
+  color: $pink;
   // border-bottom: 1px solid black;
   opacity: 1;
 }
@@ -23,7 +24,7 @@
 
 .navbar-light .navbar-nav .active > .nav-link {
   // border-bottom: 1px solid black;
-  color: black;
+  color: $pink;
   opacity: 1;
  }
 
