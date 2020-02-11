@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'reviews/new'
   get 'reviews/create'
-  devise_for :users
 
+  devise_for :users, :controllers => { :registrations => :registrations }
 
   get "/contact", to: "pages#contact", as: "contact"
   root to: 'pages#home'
