@@ -3,13 +3,17 @@
   <div class="mt-4">
     <% @bookings.each do |booking| %>
       <%= link_to user_booking_path(current_user.id, booking) do %>
-      <div class="card-booking mb-4">
-        <%= cl_image_tag booking.costume.photo.key, height: 100, width: 100, crop: :fill %>
-        <div class="card-booking-infos">
-          <h2><%= booking.costume.costume_name %></h2>
-          <p><%= booking.costume.desc_short %></p>
+        <div class="card-booking mb-4">
+          <% if booking.costume.photo.attached? %>
+            <%= cl_image_tag booking.costume.photo.key, height: 100, width: 100, crop: :fill %>
+          <% else %>
+            <%= image_tag "glittery.jpg", height: 100, width: 100 %>
+          <% end %>
+          <div class="card-booking-infos">
+            <h2><%= booking.costume.costume_name %></h2>
+            <p><%= booking.costume.desc_short %></p>
+          </div>
         </div>
-      </div>
       <% end %>
     <% end %>
   </div>

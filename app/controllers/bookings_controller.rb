@@ -13,13 +13,17 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.user_id = current_user.id
-    @booking.costume_id = Costume.find(params[:costume_id]).id
-    if @booking.save
-      redirect_to user_bookings_path(current_user.id)
+    if current_user.nil?
+      redirect_to new_user_session_path
     else
-      render :new
+      @booking = Booking.new(booking_params)
+      @booking.user_id = current_user.id
+      @booking.costume_id = Costume.find(params[:costume_id]).id
+      if @booking.save
+        redirect_to user_bookings_path(current_user.id)
+      else
+        render :new
+      end
     end
   end
 
