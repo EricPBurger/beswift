@@ -41,8 +41,15 @@
               <li><strong>Origin: </strong><%= @costume.origin %></li>
               <li><strong>Size: </strong><%= @costume.size %></li>
               <li><strong>Availability: </strong><%= @costume.availability %></li>
-              <li><strong>Description:</strong><%= @costume.desc_long %></li>
+              <li><strong>Description: </strong><%= @costume.desc_long %></li>
             </ul>
+            <div
+              id="map"
+              style="width: 100%;
+              height: 300px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
           </div>
           <div class="d-flex align-items-center flex-column">
             <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />

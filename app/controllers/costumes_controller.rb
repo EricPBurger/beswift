@@ -5,7 +5,17 @@
 
   def show
     @costume = Costume.find(params[:id])
+    # raise
     @booking = Booking.new
+    # @costume.user.geocoded
+    @markers = [{ lng: @costume.user.longitude, lat: @costume.user.latitude }]
+
+    # @marker = @address.map do |user|
+    #   {
+    #     lat: user.latitude,
+    #     lng: user.longitude
+    #   }
+    # end
   end
 
   def new
