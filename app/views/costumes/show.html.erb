@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container mt-3">
   <div class="row">
     <div class="d-flex justify-content-between">
       <div class="col-sm">
@@ -27,35 +27,84 @@
         <% end %>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 <div class="container">
   <div class="row mt-4">
     <div class="col-sm">
       <div class="card p-2">
-        <div class="card-body d-flex justify-content-between">
+        <div class="d-flex align-items-center flex-column">
+<!--         <div class="card-body d-flex justify-content-between"> -->
           <div>
+            <% if @costume.photo.attached? %>
+              <%= cl_image_tag @costume.photo.key, height: 600, width: 400, crop: :fill %>
+            <% else %>
+              <%= image_tag "nme.jpg", height: 600, width: 400 %>
+               <% end %>
+          </div>
+<!--
             <ul style="list-style: none; padding: 0;">
-              <li><h2><%= @costume.costume_name %></h2></li>
-              <li><h4><%= @costume.desc_short %></h3></li>
-              <li><strong>Origin: </strong><%= @costume.origin %></li>
-              <li><strong>Size: </strong><%= @costume.size %></li>
-              <li><strong>Availability: </strong><%= @costume.availability %></li>
-              <li><strong>Description:</strong><%= @costume.desc_long %></li>
-            </ul>
+              <li><h2 class="mb-4"><%= @costume.costume_name %></h2></li>
+              <li><h5 class="mb-4"><%= @costume.desc_short %></h5></li>
+              <li class="mb-2"><strong>Origin: </strong><%= @costume.origin %></li>
+              <li class="mb-2"><strong>Size: </strong><%= @costume.size %></li>
+              <li class="mb-2"><strong>Availability: </strong><%= @costume.availability %></li>
+              <li class="mb-2"><strong>Description: </strong><%= @costume.desc_long %></li>
+            </ul> -->
+<!--             <div
+              id="map"
+              style="width: 100%;
+              height: 300px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
           </div>
           <div class="d-flex align-items-center flex-column">
-            <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-            <span><%= @costume.user.first_name %></span>
-          </div>
+            <% if @costume.user.avatar.attached? %>
+              <%= cl_image_tag @costume.user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag "https://avatarfiles.alphacoders.com/132/thumb-132761.jpg", class: "avatar dropdown-toggle" %>
+            <% end %>
+            <span style="color: gray;"><%= @costume.user.first_name %></span>
+          </div> -->
         </div>
       </div>
     </div>
+
+
     <div class="col-sm">
       <div class="card card p-2">
         <div class="card-body">
-          <h2>£ <%= @costume.price %></h2>
+          <div class="card-body d-flex justify-content-between">
+            <h1 class="mb-4"><%= @costume.costume_name %></h1>
+            <div class="d-flex align-items-center flex-column">
+              <% if @costume.user.avatar.attached? %>
+              <%= cl_image_tag @costume.user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <%= image_tag "https://avatarfiles.alphacoders.com/132/thumb-132761.jpg", class: "avatar dropdown-toggle" %>
+              <% end %>
+              <span style="color: gray;"><%= @costume.user.first_name %></span>
+            </div>
+          </div>
+          <h2 class="mb-4">£ <%= @costume.price %> per day</h2>
           <%= render 'booking_form', costume: @costume, booking: @booking %>
+            <br>
+            <div
+              id="map"
+              style="width: 100%;
+              height: 300px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
+            <br>
+            <ul style="list-style: none; padding: 0;">
+              <li><h5 class="mb-4"><%= @costume.desc_short %></h5></li>
+              <li class="mb-2"><strong>Origin: </strong><%= @costume.origin %></li>
+              <li class="mb-2"><strong>Size: </strong><%= @costume.size %></li>
+              <li class="mb-2"><strong>Availability: </strong><%= @costume.availability %></li>
+              <li class="mb-2"><strong>Description: </strong><%= @costume.desc_long %></li>
+            </ul>
+
         </div>
       </div>
     </div>

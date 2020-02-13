@@ -1,5 +1,25 @@
-<ul>
-  <% @bookings.each do |booking| %>
-    <li><%= booking.id %></li>
-  <% end %>
-</ul>
+<div class="container mt-3">
+  <h2 class="mb-4">Your Bookings</h2>
+  <div class="mt-4">
+    <% @bookings.each do |booking| %>
+      <%= link_to user_booking_path(current_user.id, booking) do %>
+        <div class="card-booking mb-4">
+          <% if booking.costume.photo.attached? %>
+            <%= cl_image_tag booking.costume.photo.key, height: 100, width: 100, crop: :fill %>
+          <% else %>
+            <%= image_tag "glittery.jpg", height: 100, width: 100 %>
+          <% end %>
+          <div class="card-booking-infos d-flex justify-content-between">
+            <div>
+              <h2><%= booking.costume.costume_name %></h2>
+              <p><%= booking.costume.desc_short %></p>
+            </div>
+            <div>
+              <h2><%= booking.start_date %> - <%= booking.end_date %></h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
