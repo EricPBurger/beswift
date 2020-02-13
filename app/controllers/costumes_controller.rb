@@ -1,25 +1,19 @@
-  class CostumesController < ApplicationController
+class CostumesController < ApplicationController
+
   def index
     @costumes = Costume.all
     @imgs = @costumes.map { |costume| [costume.id, costume.photo.key] }
   end
 
   def show
+    add_breadcrumb "Back to costumes", costumes_path
     @costume = Costume.find(params[:id])
-    # raise
     @booking = Booking.new
-    # @costume.user.geocoded
     @markers = [{ lng: @costume.user.longitude, lat: @costume.user.latitude }]
-
-    # @marker = @address.map do |user|
-    #   {
-    #     lat: user.latitude,
-    #     lng: user.longitude
-    #   }
-    # end
   end
 
   def new
+    add_breadcrumb "Back to costumes", :costumes_path
     @costume = Costume.new
   end
 
@@ -34,6 +28,7 @@
   end
 
   def edit
+    add_breadcrumb "Back to costumes", costumes_path
     @costume = Costume.find(params[:id])
   end
 

@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   def index
+    add_breadcrumb "Back to costumes", :costumes_path
     @bookings = Booking.where(user_id: current_user.id)
   end
 
