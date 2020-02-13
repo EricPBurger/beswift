@@ -1,35 +1,33 @@
 <div id="home_navbar" class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <a class="navbar-brand" href="#">
-    <%= image_tag "beswift_black_logo.png", alt: "alttext" %>
-  </a>
-  <button class="navbar-toggler bg-transparent" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto list-inline">
-
-      <% if user_signed_in? %>
-      <% else  %>
-
-        <li class="nav-item active">
-
-          <a class="nav-link list-inline-item" href="#"></a>
-          <%= link_to "Login", new_user_session_path %>
-
-        </li>
-
-        <li>
-
-          <a class="nav-link list-inline-item" href="#"></a>
-          <%= link_to "Sign Up", new_user_registration_path %>
-        </li>
-
-      <% end %>
-      <li>
-        <%= image_tag "https://avatarfiles.alphacoders.com/132/thumb-132761.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-
-      </li>
-
+    <a class="navbar-brand" href="#">
+        <%= image_tag "beswift_black_logo.png", alt: "alttext" %>
+    </a>
+    <button class="navbar-toggler bg-transparent" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <div class="search-form-control form-group">
+            <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+            <button name="button" type="submit" class="btn btn-flat">
+                <i class="fas fa-search"></i> Search
+            </button>
+        </div>
+    </form>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto list-inline">
+            <% if user_signed_in? %>
+            <% else  %>
+            <li class="nav-item active">
+                <a class="nav-link list-inline-item" href="#"></a>
+                <%= link_to "Login", new_user_session_path %>
+            </li>
+            <li>
+                <a class="nav-link list-inline-item" href="#"></a>
+                <%= link_to "Sign Up", new_user_registration_path %>
+            </li>
+            <% end %>
+            <li>
+                <%= image_tag "https://avatarfiles.alphacoders.com/132/thumb-132761.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            </li>
     </div>
-  </div>
+</div>
