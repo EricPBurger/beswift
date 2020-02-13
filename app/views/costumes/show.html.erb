@@ -42,6 +42,8 @@
               <%= image_tag "nme.jpg", height: 600, width: 400 %>
                <% end %>
           </div>
+            <br>
+            <h5 class="mb-4"><%= @costume.desc_short %></h5>
 <!--
             <ul style="list-style: none; padding: 0;">
               <li><h2 class="mb-4"><%= @costume.costume_name %></h2></li>
@@ -89,6 +91,13 @@
           <h2 class="mb-4">£ <%= @costume.price %> per day</h2>
           <%= render 'booking_form', costume: @costume, booking: @booking %>
             <br>
+            <ul style="list-style: none; padding: 0;">
+<!--               <li><h5 class="mb-4"><%= @costume.desc_short %></h5></li> -->
+              <li class="mb-2"><strong>Origin: </strong><%= @costume.origin %></li>
+              <li class="mb-2"><strong>Size: </strong><%= @costume.size %></li>
+              <li class="mb-2"><strong>Availability: </strong><%= @costume.availability %></li>
+              <li class="mb-2"><strong>Description: </strong><%= @costume.desc_long %></li>
+            </ul>
             <div
               id="map"
               style="width: 100%;
@@ -96,14 +105,6 @@
               data-markers="<%= @markers.to_json %>"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
             ></div>
-            <br>
-            <ul style="list-style: none; padding: 0;">
-              <li><h5 class="mb-4"><%= @costume.desc_short %></h5></li>
-              <li class="mb-2"><strong>Origin: </strong><%= @costume.origin %></li>
-              <li class="mb-2"><strong>Size: </strong><%= @costume.size %></li>
-              <li class="mb-2"><strong>Availability: </strong><%= @costume.availability %></li>
-              <li class="mb-2"><strong>Description: </strong><%= @costume.desc_long %></li>
-            </ul>
 
         </div>
       </div>
