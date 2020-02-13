@@ -18,7 +18,11 @@
   <% end %>
   <% if user_signed_in? %>
     <li class="nav-item dropdown">
-      <%= image_tag "https://avatarfiles.alphacoders.com/132/thumb-132761.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% if current_user.avatar.attached? %>
+        <%= cl_image_tag current_user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% else %>
+        <%= image_tag "https://avatarfiles.alphacoders.com/132/thumb-132761.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% end %>
       <div class="dropdown-menu dropdown-menu-right pl-3" aria-labelledby="navbarDropdown">
         <%= link_to "My Bookings", user_bookings_path(current_user.id) %>
       </div>
