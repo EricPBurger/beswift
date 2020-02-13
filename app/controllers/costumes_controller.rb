@@ -1,6 +1,7 @@
   class CostumesController < ApplicationController
   def index
     @costumes = Costume.all
+    @imgs = @costumes.map { |costume| [costume.id, costume.photo.key] }
   end
 
   def show
