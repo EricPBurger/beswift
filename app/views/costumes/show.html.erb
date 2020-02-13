@@ -52,7 +52,11 @@
             ></div>
           </div>
           <div class="d-flex align-items-center flex-column">
-            <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <% if @costume.user.avatar.attached? %>
+              <%= cl_image_tag @costume.user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag "https://avatarfiles.alphacoders.com/132/thumb-132761.jpg", class: "avatar dropdown-toggle" %>
+            <% end %>
             <span style="color: gray;"><%= @costume.user.first_name %></span>
           </div>
         </div>
