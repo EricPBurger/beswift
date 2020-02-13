@@ -9,9 +9,14 @@
           <% else %>
             <%= image_tag "glittery.jpg", height: 100, width: 100 %>
           <% end %>
-          <div class="card-booking-infos">
-            <h2><%= booking.costume.costume_name %></h2>
-            <p><%= booking.costume.desc_short %></p>
+          <div class="card-booking-infos d-flex justify-content-between">
+            <div>
+              <h2><%= booking.costume.costume_name %></h2>
+              <p><%= booking.costume.desc_short %></p>
+            </div>
+            <div>
+              <h2><%= booking.start_date %> - <%= booking.end_date %></h2>
+            </div>
           </div>
         </div>
       <% end %>
