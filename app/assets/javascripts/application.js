@@ -3,12 +3,14 @@
 //= require algolia/v3/algoliasearch.min
 search = document.querySelector(".search");
 if (search) {
-  const form = document.querySelector("form");
+  console.log("")
+  const form = document.querySelector(".search-algolia");
 form.addEventListener("submit", (event) => {
+  console.log("ben")
   event.preventDefault();
   var client = algoliasearch('VFU3HYH0Y5', 'd8bb6a1c22dcaf61f9720932e7a04828');
 var index = client.initIndex('_COSTUMES');
-const searchInput = document.getElementById('search_query').value;
+const searchInput = document.getElementById('search_query-algolia').value;
 console.log(searchInput)
 index.search(searchInput, { hitsPerPage: 10, page: 0, restrictSearchableAttributes: [
   'costume_name'
@@ -18,9 +20,17 @@ index.search(searchInput, { hitsPerPage: 10, page: 0, restrictSearchableAttribut
     const row = document.querySelector(".row");
     row.innerHTML = "";
     content.hits.forEach((costume => {
+      const imgs = JSON.parse(row.dataset.imgs)
+      let url = `http://res.cloudinary.com/dzfxenhta/image/upload/c_fill,h_300,w_200/`
+      imgs.forEach((img) => {
+        if (img[0] == costume.id) {
+          url += img[1];
+        }
+      })
+
       const card = `<div class="col-md-4">
         <div class="card card-costume mb-4 shadow-sm">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1572804013427-4d7ca7268217?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" aria-label="placeholder: Thumbnail" alt="Card image cap">
+          <img class="card-img-top" src="${url}" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" aria-label="placeholder: Thumbnail" alt="Card image cap">
           <div class="card-body">
             <div class="card-text">
               <p>
