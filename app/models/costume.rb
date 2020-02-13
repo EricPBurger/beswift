@@ -3,7 +3,7 @@ class Costume < ApplicationRecord
   has_one_attached :photo
   belongs_to :user
   has_many :bookings
-  validates :costume_name, :origin, :price, :user_id, :availability, presence: true
+  validates :costume_name, :origin, :price, :user_id, :availability, :photo, presence: true
   validates :price, numericality: { only_integer: true, greater_than: 0 }
 
   after_save :load_algolia
