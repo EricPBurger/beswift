@@ -1,7 +1,4 @@
 <% content_for :nav, render('shared/home_navbar') %>
-
-
-
 <div class="bg">
     <div class="jumbotron jumbotron-fluid">
         <!-- the video below doesnt have sound but 'muted' is necessary due to chrome autoplay rules -->
@@ -11,7 +8,6 @@
             <br>
             <br>
             <br>
-            <%#= render "shared/search-form" %>
             <%= link_to 'Browse Costumes', costumes_path, class:"btn btn-outline-light btn-lg mr-5" %>
         </div>
     </div>
@@ -19,6 +15,4 @@
 <div class="container-fluid main-body-home">
 </div>
 <div class="parallax"></div>
-
-
 <%= render "shared/reviews" %>
