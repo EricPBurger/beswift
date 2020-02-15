@@ -6,15 +6,18 @@
         <div id="jumboContainer" class="container">
             <h1 class="display-3 mb-5"><span id="be">Be</span><span class="txt-rotate" data-period="2000" data-rotate='[ "Savage", "Spectacular", "Splendid", "Swift" ]'></span></h1>
 
+            <h5>Rent ready-to-wear Taylor Swift costumes</h5>
+            <br>
+
             <%= link_to 'Browse Costumes', costumes_path, class:"btn btn-outline-light btn-lg browse-costumes" %>
         </div>
     </div>
 </div>
 <div class="container-fluid main-body-home ">
   <h3>Our latest additions</h3>
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-around">
     <% @costumes.each do |costume| %>
-      <div class="col-md-3 home-costumes">
+      <div class="col-md-3 d-flex justify-content-around home-costumes">
         <%= render "costumes/costume-card", costume: costume %>
       </div>
     <% end %>
