@@ -22,9 +22,9 @@
         <%= image_tag "https://avatarfiles.alphacoders.com/132/thumb-132761.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% end %>
       <div class="dropdown-menu dropdown-menu-right pl-3" aria-labelledby="navbarDropdown">
-        <%= link_to "My Bookings", user_bookings_path(current_user.id) %>
-        <%= link_to "Edit Profile", edit_user_registration_path %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <%= link_to "My Bookings", user_bookings_path(current_user.id), class:"dropdown-item"  %>
+        <%= link_to "Edit Profile", edit_user_registration_path, class:"dropdown-item"  %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"dropdown-item"  %>
       </div>
     </li>
   <% end %>
