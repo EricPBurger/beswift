@@ -9,15 +9,15 @@
   </form>
   <div class="d-flex justify-content-between" style="width:100%;">
     <h2 class="mb-4">Costumes</h2>
-    <div><%= link_to 'Add Costume', new_costume_path, class:"btn btn-primary", style:"color: white;" %></div>
+    <% if user_signed_in? %>
+      <div><%= link_to 'Add Costume', new_costume_path, class:"btn btn-primary", style:"color: white;" %></div>
+    <% end %>
   </div>
   <div class="row" data-imgs="<%= @imgs.to_json %>">
-    <div class="row">
-      <% @costumes.each do |costume| %>
-        <div class="col-md-3">
-          <%= render "costume-card", costume: costume %>
-        </div>
-      <% end %>
-    </div>
+    <% @costumes.each do |costume| %>
+      <div class="col">
+        <%= render "costume-card", costume: costume %>
+      </div>
+    <% end %>
   </div>
 </div>

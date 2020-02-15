@@ -1,14 +1,7 @@
 <%= link_to costume_path(costume) do %>
-  <div class="card card-costume mb-3 shadow-sm">
-    <% if costume.photo.attached? %>
-      <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
-    <% else %>
-      <%= image_tag "nme.jpg", height: 300, width: 200 %>
-    <% end %>
-    <div class="card-body">
-      <div class="card-text">
-        <p><%= costume.costume_name%></p>
-      </div>
+    <div class="costume-card-small" style="background-image: url(<%= rails_blob_url(costume.photo) %>);"></div>
+    <div class="costume-card-infos">
+      <p style="font-weight: normal;"><%= costume.costume_name %></p>
+      <p style="font-size: 16px;">£<%= costume.price %> per day</p>
     </div>
-  </div>
 <% end %>
