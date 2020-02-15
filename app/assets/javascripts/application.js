@@ -29,8 +29,8 @@ index.search(searchInput, { hitsPerPage: 10, page: 0, restrictSearchableAttribut
       })
 
       const card = `<div class="col-md-4">
-        <div class="card card-costume mb-4 shadow-sm">
-          <img class="card-img-top" src="${url}" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" aria-label="placeholder: Thumbnail" alt="Card image cap">
+        <div class="card card-costume mb-4 shadow-sm card-costume-min">
+          <img class="card-img-top" src="${url}" preserveAspectRatio="xMidYMid slice" focusable="false" aria-label="placeholder: Thumbnail" alt="Card image cap">
           <div class="card-body">
             <div class="card-text">
               <p>
