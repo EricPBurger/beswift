@@ -4,15 +4,21 @@
         <!-- the video below doesnt have sound but 'muted' is necessary due to chrome autoplay rules -->
         <%= video_tag "beswift_hero_image.mp4",autoplay: true, loop: true, muted: 'muted', :controls => false %>
         <div id="jumboContainer" class="container">
-            <h1 class="display-3 mb-5">Be<span class="txt-rotate" data-period="2000" data-rotate='[ "Savage", "Spectacular", "Splendid", "Swift" ]'></span></h1>
-            <br>
-            <br>
-            <br>
-            <%= link_to 'Browse Costumes', costumes_path, class:"btn btn-outline-light btn-lg mr-5" %>
+            <h1 class="display-3 mb-5"><span id="be">Be</span><span class="txt-rotate" data-period="2000" data-rotate='[ "Savage", "Spectacular", "Splendid", "Swift" ]'></span></h1>
+
+            <%= link_to 'Browse Costumes', costumes_path, class:"btn btn-outline-light btn-lg mr-5 browse-costumes" %>
         </div>
     </div>
 </div>
-<div class="container-fluid main-body-home">
+<div class="container-fluid main-body-home ">
+  <h3>Our latest additions</h3>
+  <div class="row d-flex justify-content-center"">
+    <% @costumes.each do |costume| %>
+      <div class="col-md-3">
+        <%= render "costumes/costume-card", costume: costume %>
+      </div>
+    <% end %>
+  </div>
 </div>
 <div class="parallax"></div>
 <%= render "shared/reviews" %>
