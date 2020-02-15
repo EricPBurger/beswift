@@ -14,7 +14,7 @@
   <h3>Our latest additions</h3>
   <div class="row d-flex justify-content-center">
     <% @costumes.each do |costume| %>
-      <div class="col-md-3">
+      <div class="col-md-3 home-costumes">
         <%= render "costumes/costume-card", costume: costume %>
       </div>
     <% end %>
