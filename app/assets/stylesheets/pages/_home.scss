@@ -6,7 +6,10 @@ body {
   // background-color: var(--light-text-color);
   overflow-x: hidden;
   background-color: white;
+}
 
+.min-height {
+  min-height: calc(100vh - 220px);
 }
 
 
