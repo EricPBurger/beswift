@@ -27,26 +27,16 @@ index.search(searchInput, { hitsPerPage: 10, page: 0, restrictSearchableAttribut
           url += img[1];
         }
       })
+          // <img class="card-img-top" src="${url}" preserveAspectRatio="xMidYMid slice" focusable="false" aria-label="placeholder: Thumbnail" alt="Card image cap">
 
-      const card = `<div class="col-md-4">
-        <div class="card card-costume mb-4 shadow-sm card-costume-min">
-          <img class="card-img-top" src="${url}" preserveAspectRatio="xMidYMid slice" focusable="false" aria-label="placeholder: Thumbnail" alt="Card image cap">
-          <div class="card-body">
-            <div class="card-text">
-              <p>
-                ${costume.costume_name}
-              </p>
-              <div class="d-flex justify-content-between alighn-items-center">
-                <div class="btn-group">
-                <a class="btn btn-sm btn-outline-secondary" href="/costumes/${costume.id}">Show</a>
-                <button class="btn btn-sm btn-outline-secondary" type="button">Edit
-                    </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>`
+      const card = `
+        <a href="/costumes/${costume.id}">
+        <div class="costume-card-small" style="background-image: url(${url});"></div>
+        <div class="costume-card-infos">
+      <p style="font-weight: normal;">${costume.costume_name}</p>
+      <p style="font-size: 16px;">£${costume.price} per day</p>
+    </div></a>`
+
       row.insertAdjacentHTML("beforeend", card)
     }))
   })
