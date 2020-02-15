@@ -17,7 +17,7 @@
   <h3>Our latest additions</h3>
   <div class="row d-flex justify-content-around">
     <% @costumes.each do |costume| %>
-      <div class="col-md-3 d-flex justify-content-around">
+      <div class="col-md-3 d-flex justify-content-around home-costumes">
         <%= render "costumes/costume-card", costume: costume %>
       </div>
     <% end %>
