@@ -5,7 +5,10 @@ class BookingsController < ApplicationController
   end
 
   def show
+    add_breadcrumb "Back to bookings", :bookings_path
     @booking = Booking.find_by(user_id: current_user.id, id: params[:id])
+    @costume = @booking.costume
+    @markers = [{ lng: @costume.user.longitude, lat: @costume.user.latitude }]
   end
 
   def new
@@ -36,6 +39,11 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
   end
 
   private

@@ -10,4 +10,12 @@
   <% end %>
   </p>
   <p><strong>Total amount: </strong> £ <%= (@booking.end_date - @booking.start_date).to_i * @booking.costume.price.to_i %></p>
+  <p><strong>Collect from: </strong> <%= @booking.user.address %> </p>
+    <div
+      id="map"
+      style="width: 450px;
+      height: 300px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 </div>
