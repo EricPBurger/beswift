@@ -11,11 +11,6 @@ class BookingsController < ApplicationController
     @markers = [{ lng: @costume.user.longitude, lat: @costume.user.latitude }]
   end
 
-  def new
-    @costume = Costume.find(params[:costume_id])
-    @booking = Booking.new
-  end
-
   def create
     if current_user.nil?
       redirect_to new_user_session_path
@@ -26,7 +21,8 @@ class BookingsController < ApplicationController
       if @booking.save
         redirect_to user_bookings_path(current_user.id)
       else
-        render :new
+        @costume = Costume.find(params[:costume_id])
+        render 'costumes/show'
       end
     end
   end
