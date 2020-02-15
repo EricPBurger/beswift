@@ -26,9 +26,12 @@ body {
 #jumboContainer {
   margin: auto;
   width: 70%;
-  top: 50px;
+  top: 200px;
   padding: 20px 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .jumbotron .container {
@@ -52,12 +55,34 @@ body {
 .lead-div {
   display: flex;
   flex-direction: row;
+  text-align: center;
+}
+
+#be {
+  color: $pink;
+}
+
+
+.browse-costumes {
+  width: 250px;
+  align-self: center;
+}
+.browse-costumes:hover {
+  background-color: $pink;
+  color: white;
+  border: 1px solid $pink;
 }
 
 .main-body-home {
   background-color: white;
-  height: 700px;
+  height: 600px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
 
+.main-body-home > h3 {
+  margin-bottom: 20px;
 }
 
 

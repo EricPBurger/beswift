@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_194911) do
   create_table "costumes", force: :cascade do |t|
     t.string "costume_name"
     t.string "origin"
-    t.float "price"
+    t.decimal "price", precision: 8, scale: 2
     t.string "desc_short"
     t.text "desc_long"
     t.bigint "user_id"
