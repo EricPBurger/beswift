@@ -1,19 +1,11 @@
 <div class="container">
   <div class="row mt-4">
     <div class="col-sm">
-      <div class="card p-2">
-        <div class="d-flex align-items-center flex-column">
-          <div>
-            <% if @costume.photo.attached? %>
-              <%= cl_image_tag @costume.photo.key, height: 600, width: 400, crop: :fill %>
-            <% else %>
-              <%= image_tag "nme.jpg", height: 600, width: 400 %>
-            <% end %>
-          </div>
-            <br>
-            <h5 class="mb-4"><%= @costume.desc_short %></h5>
-        </div>
+
+      <div class="costume-card-large" style="background-image: url(<%= rails_blob_url(@costume.photo) %>);">
+
       </div>
+
     </div>
 
     <div class="col-sm">
