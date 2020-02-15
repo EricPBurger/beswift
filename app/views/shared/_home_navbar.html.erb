@@ -1,9 +1,9 @@
-<div id="home_navbar" class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div id="home_navbar" class="navbar home_navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path do %>
-    <%= image_tag "beswift_black_logo.png", alt: "alttext", size: "172x50"%>
+  <%= image_tag "beswift_black_logo.png", alt: "alttext", size: "172x50"%>
   <% end %>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav mr-auto list-inline">
+  <div class="collapse navbar-collapse home_navbar" id="navbarSupportedContent">
+  <ul class="navbar-nav home_navbar mr-auto list-inline">
     <% if user_signed_in? %>
 
     <% else  %>
