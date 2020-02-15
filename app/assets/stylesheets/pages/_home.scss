@@ -151,16 +151,23 @@ body {
 
 }
 
-.review-pills > div:hover {
-  width: 25%;
-  margin: 10px;
-  height: 350px;
+// .review-pills > div:hover {
+//   width: 25%;
+//   margin: 10px;
+//   height: 350px;
+
+// }
+
+.review-img:hover {
+  transform: scale(1.1);
   transition-duration: 1000ms;
 }
 
 .review-pills > div > a {
   width: 100%;
   height: 100%;
+  background-position: center;
+  background-size: cover;
 }
 
 p.name {
