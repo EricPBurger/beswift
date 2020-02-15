@@ -34,7 +34,7 @@ index.search(searchInput, { hitsPerPage: 10, page: 0, restrictSearchableAttribut
         <div class="costume-card-small" style="background-image: url(${url});"></div>
         <div class="costume-card-infos">
       <p style="font-weight: normal;">${costume.costume_name}</p>
-      <p style="font-size: 16px;">£${costume.price} per day</p>
+      <p style="font-size: 16px;">£${costume.formatted_price} per day</p>
     </div></a>`
 
       row.insertAdjacentHTML("beforeend", card)
