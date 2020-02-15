@@ -179,19 +179,19 @@ p.booking_date {
 }
 
 #image-1 {
-  background-image: url(long-sequins.png);
+  background-image: asset-url("long-sequins.png");
   // width: 100px;
 }
 
 #image-2 {
-  background-image: url(pink_dress.png);
+  background-image: asset-url("pink_dress.png");
   // width: 100px;
 }
 #image-3 {
-  background-image: url(short_sequins.png);
+  background-image: asset-url("short_sequins.png");
   // width: 100px;
 }
 #image-4 {
-  background-image: url(white_dress.png);
+  background-image: asset-url("white_dress.png");
   // width: 100px;
 }
