@@ -1,5 +1,13 @@
 <div class="container mt-3">
   <h2 class="mb-4">Your Booking: <%= @booking.costume.costume_name %></h2>
-  <p>Start Date: <%= @booking.start_date %></p>
-  <p>End Date: <%= @booking.end_date %></p>
+  <p><strong>Start Date: </strong><%= @booking.start_date %></p>
+  <p><strong>End Date: </strong><%= @booking.end_date %></p>
+  <p><strong>Total time: </strong><%= (@booking.end_date - @booking.start_date).to_i %> 
+  <% if (@booking.end_date - @booking.start_date).to_i == 1 %>
+    <%= "day" %>
+  <% else %>
+    <%= "days" %>
+  <% end %>
+  </p>
+  <p><strong>Total amount: </strong> £ <%= (@booking.end_date - @booking.start_date).to_i * @booking.costume.price.to_i %></p>
 </div>

@@ -18,10 +18,11 @@
           <div class="card-booking-infos d-flex justify-content-between">
             <div>
               <h2><%= booking.costume.costume_name %></h2>
-              <p><%= booking.costume.desc_short %></p>
+              <p><strong>Collect from: </strong><%= booking.user.address %></p>
             </div>
             <div>
               <h2><%= booking.start_date %> - <%= booking.end_date %></h2>
+              <p style="text-align:right">£ <%= (booking.end_date - booking.start_date).to_i * booking.costume.price.to_i %></p>
             </div>
           </div>
         </div>
