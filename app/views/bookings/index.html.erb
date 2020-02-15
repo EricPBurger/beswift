@@ -11,7 +11,7 @@
       <%= link_to user_booking_path(current_user.id, booking) do %>
         <div class="card-booking mb-4">
           <% if booking.costume.photo.attached? %>
-            <%= cl_image_tag booking.costume.photo.key, height: 100, width: 100, crop: :fill %>
+            <%= cl_image_tag booking.costume.photo.key, height: 200, width: 200, crop: :fill %>
           <% else %>
             <%= image_tag "glittery.jpg", height: 100, width: 100 %>
           <% end %>
